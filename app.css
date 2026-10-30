@@ -1,0 +1,109 @@
+/* Global Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+/* Error Container & Card */
+.error-container {
+  width: 100%;
+  max-width: 480px;
+}
+
+.error-card {
+  background-color: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eee;
+}
+
+/* Icon Styles */
+.icon-container {
+  width: 72px;
+  height: 72px;
+  background-color: #fff3cd;
+  color: #d97706;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+/* Typography */
+.error-card h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.75rem;
+}
+
+.error-card p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* Button Styling */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #0066cc;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #0052a3;
+}
+
+.btn-secondary {
+  background-color: #f0f0f5;
+  color: #333333;
+}
+
+.btn-secondary:hover {
+  background-color: #e2e2e8;
+}
+
+/* Responsive adjustments */
+@media (min-width: 480px) {
+  .btn-group {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .btn {
+    flex: 1;
+  }
+}
