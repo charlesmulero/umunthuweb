@@ -107,3 +107,9 @@ body {
     flex: 1;
   }
 }
+
+/* Success Icon Override */
+.icon-container.success-icon {
+  background-color: #e6f4ea !important;
+  color: #137333 !important;
+}
