@@ -128,3 +128,76 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+
+
+
+//video
+
+// (function () {
+//         const wrapper = document.getElementById('storyVideoWrapper');
+//         const video   = document.getElementById('storyVideo');
+//         const cover   = document.getElementById('storyVideoCover');
+
+//         function playVideo() {
+//             wrapper.classList.add('is-playing');
+//             video.play();
+//         }
+
+//         cover.addEventListener('click', playVideo);
+//         cover.addEventListener('keydown', function (e) {
+//             if (e.key === 'Enter' || e.key === ' ') {
+//                 e.preventDefault();
+//                 playVideo();
+//             }
+//         });
+
+//         // Bring the cover back when the video ends
+//         video.addEventListener('ended', function () {
+//             wrapper.classList.remove('is-playing');
+//             video.currentTime = 0;
+//         });
+//     })();
+
+ (function () {
+        const trigger = document.getElementById('storyVideoTrigger');
+        const modal   = document.getElementById('storyVideoModal');
+        const video   = document.getElementById('storyModalVideo');
+        const closers = modal.querySelectorAll('[data-close-modal]');
+
+        function openModal() {
+            modal.classList.add('is-open');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.classList.add('story-modal-open');
+            const p = video.play();
+            if (p && p.catch) p.catch(function () {}); // ignore autoplay blocks
+            modal.querySelector('.story-modal-close').focus();
+        }
+
+        function closeModal() {
+            video.pause();
+            video.currentTime = 0;
+            modal.classList.remove('is-open');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.classList.remove('story-modal-open');
+            trigger.focus();
+        }
+
+        trigger.addEventListener('click', openModal);
+        trigger.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openModal();
+            }
+        });
+
+        closers.forEach(function (el) {
+            el.addEventListener('click', closeModal);
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+                closeModal();
+            }
+        });
+    })();

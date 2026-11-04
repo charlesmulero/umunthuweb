@@ -100,6 +100,14 @@ a {
     height: 100%;
 }
 
+/* Right Content Grouping container */
+.top-nav-right-content {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 16px;
+}
+
 /* Social Links */
 .top-nav .social-links {
     display: flex;
@@ -110,9 +118,9 @@ a {
 
 .top-nav .social-links a {
     color: rgba(255, 255, 255, 0.8);
-    font-size: 15px;
-    width: 15px;
-    height: 15px;
+    font-size: 17px;
+    width: 17px;
+    height: 17px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,6 +128,13 @@ a {
 
 .top-nav .social-links a:hover {
     color: var(--color-secondary);
+}
+
+/* Thin Demarcation Line */
+.top-nav-divider {
+    width: 1px;
+    height: 16px;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Email Info */
@@ -130,6 +145,7 @@ a {
     align-items: center;
     gap: 8px;
     font-weight: 400;
+    font-size: 16px;
     transition: all 0.4s ease-in-out;
 }
 
@@ -141,15 +157,15 @@ a {
 
 .top-nav p i {
     color: var(--color-secondary);
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 
 /* ==========================================================================
    2. MAIN NAVIGATION (Height: 72px)
    ========================================================================== */
 .navbar {
-    height: 72px;
-    min-height: 72px;
+    height: 82px;
+    min-height: 82px;
     padding-top: 0;
     padding-bottom: 0;
     background-color: var(--color-white) !important;
@@ -172,7 +188,7 @@ a {
 }
 
 .navbar-logo {
-    height: 33px;
+    height: 43px;
     width: auto;
     object-fit: contain;
 }
@@ -181,7 +197,7 @@ a {
 .navbar-nav .nav-link {
     color: var(--color-primary);
     font-weight: 600;
-    font-size: 12.5px;
+    font-size: 16px;
     padding: 0 12px !important;
     text-transform: uppercase;
     line-height: 72px; /* Centers text across 72px height */
@@ -206,7 +222,7 @@ a {
 
 /* Dropdown Menu Items */
 .navbar-nav .dropdown-item {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     color: var(--color-primary);
     padding: 10px 20px;
@@ -260,7 +276,7 @@ a {
     background-color: var(--color-primary);
     color: var(--color-white);
     font-weight: 600;
-    font-size: 12.5px;
+    font-size: 14px;
     text-transform: uppercase;
     padding: 10px 24px;
     border-radius: 6px;
@@ -303,7 +319,6 @@ a {
         margin-top: 12px;
     }
 }
-
 /* ==========================================================================
    3. HERO SECTION (Height: 517px) - Slider
    ========================================================================== */
@@ -336,8 +351,8 @@ a {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at center, rgba(12, 16, 23, 0.242) 0%, rgba(13, 18, 27, 0.468) 100%),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.256) 0%, rgba(0, 0, 0, 0.416) 100%);
+        radial-gradient(circle at center, rgba(12, 16, 23, 0.142) 0%, rgba(13, 18, 27, 0.368) 100%),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.156) 0%, rgba(0, 0, 0, 0.316) 100%);
 }
 
 .hero-slide-1 { background-image: url('../images/hero/1.jpg'); }
@@ -359,7 +374,7 @@ a {
 
 .hero-subtitle {
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(14px, 1.5vw, 18px);
+    font-size: clamp(16px, 1.7vw, 20px);
     font-weight: 300;
     letter-spacing: clamp(1px, 0.2vw, 2px);
     color: var(--color-secondary);
@@ -369,13 +384,16 @@ a {
 .hero-title {
     font-family: 'Inter', sans-serif;
     /* Scales between 64px (desktop minimum) and 90px (ultra-wide maximum) */
-    font-size: clamp(64px, 5.5vw, 90px);
+    font-size: clamp(66px, 5.6vw, 92px);
     font-weight: 800;
     text-transform: uppercase;
     line-height: 1.1;
     letter-spacing: -0.5px;
     color: var(--color-white);
     margin-bottom: 0;
+    
+    /* Subtle text shadow for readability */
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.384);
 }
 
 .btn-outline-brand {
@@ -415,8 +433,8 @@ a {
    4. ABOUT SECTION
    ========================================================================== */
 .about {
-    padding-top: 96px;
-    padding-bottom: 96px;
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
 }
 
 .about .container {
@@ -437,7 +455,7 @@ a {
 }
 
 .about-title {
-    font-size: 28px;
+    font-size: 32px;
     text-transform: uppercase;
     font-weight: 1000;
     color: var(--color-white) !important;
@@ -456,7 +474,7 @@ a {
 .about-row p {
     font-family: 'Inter', sans-serif;
     color: var(--color-white) !important;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 200;
     letter-spacing: 0;
     line-height: 1.6;
@@ -473,7 +491,7 @@ a {
     gap: 4px;
     color: var(--color-secondary);
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -551,12 +569,12 @@ a {
 
 #vision .about-title,
 #mission .about-title {
-    font-size: 28px;
+    font-size: 32px;
 }
 
 #vision p.vision,
 #mission p.mission {
-    font-size: 20px !important;
+    font-size: 24px !important;
 }
 
 @media (max-width: 767.98px) {
@@ -577,7 +595,7 @@ a {
    6. PARTNERSHIPS SECTION
    ========================================================================== */
 .about-title-dark {
-    font-size: 28px;
+    font-size: 32px;
     text-transform: uppercase;
     font-weight: 1000;
     color: var(--color-primary) !important;
@@ -604,20 +622,23 @@ a {
 }
 
 #partnerships .about-divider {
-    margin-bottom: 0;
+    margin-bottom: 80px; 
 }
 
 .partner-item {
-    width: 267px;
+    width: 280px; /* Standardized width for both cards */
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .partner-logo-box {
-    width: 267px;
-    max-width: 100%;
-    height: 81px;
+    width: 100%;
+    height: 90px;
     background-color: var(--color-bg-light);
     border: 1px solid var(--color-border);
     border-radius: 8px;
@@ -626,14 +647,13 @@ a {
     justify-content: center;
     padding: 12px;
     transition: all 0.3s ease;
+    margin-bottom: 16px; /* Controlled spacing between logo box and title */
 }
 
 .partner-logo {
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
-    filter: grayscale(100%);
-    opacity: 0.8;
     transition: all 0.3s ease;
 }
 
@@ -642,17 +662,17 @@ a {
     box-shadow: 0 6px 18px rgba(0, 33, 71, 0.08);
 }
 
-.partner-item:hover .partner-logo {
-    filter: grayscale(0%);
-    opacity: 1;
-}
-
 .partner-name {
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--color-primary);
     margin-bottom: 0;
+    /* Gives enough space for 2 lines uniformly so boxes stay balanced */
+    min-height: 44px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (max-width: 767.98px) {
@@ -683,7 +703,7 @@ a {
 
 .news-intro {
     font-family: 'Inter', sans-serif;
-    font-size: 18px;
+    font-size: 24px;
     color: var(--color-text-dark);
     margin-bottom: 32px;
 }
@@ -753,7 +773,7 @@ a {
 }
 
 .news-card-title {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 700;
     line-height: 1.3;
     color: var(--color-primary);
@@ -767,7 +787,7 @@ a {
 
 .news-card-text {
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
     color: var(--color-text-dark);
     margin-bottom: 16px;
@@ -778,7 +798,7 @@ a {
     align-items: center;
     gap: 6px;
     margin-bottom: 12px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 500;
     color: var(--color-primary);
 }
@@ -793,7 +813,7 @@ a {
     align-items: center;
     gap: 4px;
     margin-top: auto;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--color-primary);
     transition: color 0.3s ease;
@@ -837,159 +857,287 @@ a {
 }
 
 /* ==========================================================================
-   8. OUR TEAM SECTION
+   8. OUR STORY SECTION
    ========================================================================== */
-.team {
-    background-color: var(--color-primary);
-    padding-top: 80px;
-    padding-bottom: 80px;
+.our-story {
+    background-color: var(--color-primary); /* The outer background section (bg-1) */
+    padding-top: 120px;
+    padding-bottom: 90px;
+    overflow: hidden;
 }
 
-.team-intro {
+/* Full-width Card Box (bg-2), no container wrapping it */
+.story-main-box {
+    background-color: var(--color-primary-2); /* bg-2 styling */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Left Content Styles
+   Left padding mimics the Bootstrap container's left edge so the text
+   lines up with the rest of the page content. */
+.story-content {
+    color: var(--color-white);
+    width: 100%;
+    padding: 60px 40px 60px 24px; /* fallback */
+}
+
+.story-content .about-title {
+    text-align: left;
+    margin-bottom: 14px;
+}
+
+.story-content .about-divider {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.story-text {
     font-family: 'Inter', sans-serif;
-    color: var(--color-white) !important;
-    font-size: 18px;
+    font-size: 24px;
+    line-height: 1.7;
+    color: var(--color-white);
+    opacity: 0.9;
+    margin-bottom: 16px;
+    font-weight: 200;
+}
+
+.story-text:last-child {
     margin-bottom: 0;
 }
 
-/* Scroll container (scrollbar hidden) */
-.team-scroll-container {
+/* Right side: cover image filling 100% height & width */
+.story-video-wrapper {
+    position: relative;
     width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    padding-bottom: 8px;
+    height: 100%;
+    min-height: 380px;
 }
 
-.team-scroll-container::-webkit-scrollbar {
-    display: none;
-}
-
-.team-grid {
+/* Cover image (click target that opens the modal) */
+.story-video-cover {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
     display: flex;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease;
 }
 
-/* Responsive card sizing */
-.team-card-wrapper {
-    flex: 0 0 220px;
+.story-video-cover:hover{
+    transform: scale(1.03);
 }
 
-@media (min-width: 576px) {
-    .team-card-wrapper {
-        flex: 0 0 261px;
-    }
+/* Dark tint so the play button stands out */
+.story-video-cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease;
 }
 
-@media (min-width: 992px) {
-    .team-card-wrapper {
-        flex: 0 0 calc(25% - 15px);
-    }
+.story-video-cover:hover::before {
+    background: rgba(0, 0, 0, 0.45);
 }
 
-.team-card {
-    background-color: var(--color-primary-2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.story-video-cover:focus-visible {
+    outline: 3px solid var(--color-white);
+    outline-offset: -6px;
+}
+
+/* Play button */
+.story-play-btn {
+    position: relative;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: var(--color-white);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+    animation: storyPulse 2s infinite;
+    transition: transform 0.3s ease;
+}
+
+.story-play-btn svg {
+    margin-left: 4px; /* optically centers the triangle */
+}
+
+.story-video-cover:hover .story-play-btn {
+    transform: scale(1.1);
+}
+
+@keyframes storyPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5); }
+    70%  { box-shadow: 0 0 0 22px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+/* ==========================================================================
+   VIDEO MODAL
+   ========================================================================== */
+.story-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.story-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.story-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+}
+
+.story-modal-dialog {
+    position: relative;
+    width: 100%;
+    max-width: 960px;
+    transform: scale(0.94) translateY(10px);
+    transition: transform 0.3s ease;
+}
+
+.story-modal.is-open .story-modal-dialog {
+    transform: scale(1) translateY(0);
+}
+
+.story-modal-video-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
     border-radius: 8px;
     overflow: hidden;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
-.team-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-hover);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
-}
-
-.team-card-media {
+.story-modal-video-box video {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    aspect-ratio: 1 / 1;
-    background: var(--color-primary-2);
+    height: 100%;
+    object-fit: contain;
+    background: #000;
+}
+
+.story-modal-close {
+    position: absolute;
+    top: -48px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background: var(--color-white);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.story-modal-close:hover {
+    transform: rotate(90deg) scale(1.08);
+}
+
+/* Lock page scroll while modal is open */
+body.story-modal-open {
     overflow: hidden;
 }
 
-.team-card-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    filter: grayscale(100%);
-    transition: filter 0.4s ease, transform 0.5s ease;
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+/* Container-aligned left padding (Bootstrap container widths)
+   Offset = (100vw - containerWidth) / 2 + 12px gutter */
+@media (min-width: 992px) {
+    .story-content {
+        padding-left: calc((100vw - 960px) / 2 + 12px);
+        padding-right: 48px;
+    }
 }
 
-.team-card:hover .team-card-media img {
-    filter: grayscale(0%);
-    transform: scale(1.05);
+@media (min-width: 1200px) {
+    .story-content {
+        padding-left: calc((100vw - 1140px) / 2 + 12px);
+    }
 }
 
-.team-card-body {
-    padding: 20px 14px 22px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    text-align: center;
+@media (min-width: 1400px) {
+    .story-content {
+        padding-left: calc((100vw - 1320px) / 2 + 12px);
+    }
 }
 
-.team-name {
-    font-size: 19px;
-    font-weight: 700;
-    line-height: 1.3;
-    color: var(--color-white);
-    margin-bottom: 6px;
-}
+@media (max-width: 991.98px) {
+    .story-content {
+        text-align: center;
+        padding: 40px 20px;
+    }
 
-.team-role {
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 1.4;
-    color: var(--color-border);
-    margin-bottom: 0;
-}
+    .story-content .about-title {
+        text-align: center;
+    }
 
-.team-dots {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    margin-top: 24px;
-}
+    .story-content .about-divider {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-.team-dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.25);
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease, width 0.3s ease;
-}
-
-.team-dot.active {
-    background-color: var(--color-secondary);
-    width: 24px;
-    border-radius: 12px;
+    .story-video-wrapper {
+        min-height: 300px;
+    }
 }
 
 @media (max-width: 767.98px) {
-    .team {
-        padding-top: 56px;
-        padding-bottom: 56px;
+    .our-story {
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 
-    .team-name {
-        font-size: 18px;
+    .story-text {
+        font-size: 15px;
     }
 
-    .team-role {
-        font-size: 14px;
+    .story-play-btn {
+        width: 68px;
+        height: 68px;
+    }
+
+    .story-modal {
+        padding: 12px;
+    }
+
+    .story-modal-close {
+        top: -46px;
+        right: 4px;
     }
 }
+
 
 /* ==========================================================================
    9. FOOTER SECTION & SCROLL TO TOP
