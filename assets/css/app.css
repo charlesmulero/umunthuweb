@@ -560,6 +560,7 @@ a {
     align-items: center;
     padding-top: 48px;
     padding-bottom: 48px;
+    
 }
 
 #vision .container,
@@ -639,8 +640,8 @@ a {
 .partner-logo-box {
     width: 100%;
     height: 90px;
-    background-color: var(--color-bg-light);
-    border: 1px solid var(--color-border);
+    /* background-color: var(--color-bg-light); */
+    /* border: 1px solid var(--color-border); */
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -658,8 +659,8 @@ a {
 }
 
 .partner-item:hover .partner-logo-box {
-    border-color: var(--color-hover);
-    box-shadow: 0 6px 18px rgba(0, 33, 71, 0.08);
+    /* border-color: var(--color-hover); */
+    /* box-shadow: 0 6px 18px rgba(0, 33, 71, 0.08); */
 }
 
 .partner-name {
@@ -860,7 +861,7 @@ a {
    8. OUR STORY SECTION
    ========================================================================== */
 .our-story {
-    background-color: var(--color-primary); /* The outer background section (bg-1) */
+    /* background-color: var(--color-primary); */
     padding-top: 120px;
     padding-bottom: 90px;
     overflow: hidden;
@@ -868,7 +869,7 @@ a {
 
 /* Full-width Card Box (bg-2), no container wrapping it */
 .story-main-box {
-    background-color: var(--color-primary-2); /* bg-2 styling */
+    /* background-color: var(--color-primary-2);  */
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;

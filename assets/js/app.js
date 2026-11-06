@@ -159,30 +159,49 @@ document.addEventListener('DOMContentLoaded', function () {
 //         });
 //     })();
 
- (function () {
-        const trigger = document.getElementById('storyVideoTrigger');
-        const modal   = document.getElementById('storyVideoModal');
-        const video   = document.getElementById('storyModalVideo');
-        const closers = modal.querySelectorAll('[data-close-modal]');
+document.addEventListener('DOMContentLoaded', function () {
+    const trigger = document.getElementById('storyVideoTrigger');
+    const navTrigger = document.getElementById('navOurStoryLink');
+    const modal = document.getElementById('storyVideoModal');
+    const video = document.getElementById('storyModalVideo');
+    
+    if (!modal || !video) return;
+    
+    const closers = modal.querySelectorAll('[data-close-modal]');
 
-        function openModal() {
-            modal.classList.add('is-open');
-            modal.setAttribute('aria-hidden', 'false');
-            document.body.classList.add('story-modal-open');
-            const p = video.play();
-            if (p && p.catch) p.catch(function () {}); // ignore autoplay blocks
-            modal.querySelector('.story-modal-close').focus();
+    function openModal(e) {
+        if (e) e.preventDefault();
+        
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('story-modal-open');
+        
+        // Play the video
+        const playPromise = video.play();
+        if (playPromise && playPromise.catch) {
+            playPromise.catch(function (err) {
+                console.log('Autoplay blocked:', err);
+            });
         }
+        
+        // Focus the close button for accessibility
+        const closeBtn = modal.querySelector('.story-modal-close');
+        if (closeBtn) closeBtn.focus();
+    }
 
-        function closeModal() {
-            video.pause();
-            video.currentTime = 0;
-            modal.classList.remove('is-open');
-            modal.setAttribute('aria-hidden', 'true');
-            document.body.classList.remove('story-modal-open');
-            trigger.focus();
-        }
+    function closeModal() {
+        video.pause();
+        video.currentTime = 0;
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('story-modal-open');
+        
+        // NOTE: trigger.focus() was removed here to prevent the browser 
+        // from automatically scrolling down to the section upon closing.
+    }
 
+    // 1. Trigger from Section Cover Box
+    if (trigger) {
         trigger.addEventListener('click', openModal);
         trigger.addEventListener('keydown', function (e) {
             if (e.key === 'Enter' || e.key === ' ') {
@@ -190,14 +209,37 @@ document.addEventListener('DOMContentLoaded', function () {
                 openModal();
             }
         });
+    }
 
-        closers.forEach(function (el) {
-            el.addEventListener('click', closeModal);
-        });
+    // 2. Trigger from Navbar Dropdown Link
+    if (navTrigger) {
+        navTrigger.addEventListener('click', function (e) {
+            e.preventDefault();
 
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-                closeModal();
+            // Close Bootstrap mobile navbar dropdown if it's open
+            const navbarCollapse = document.getElementById('navbarNav');
+            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                if (bsCollapse) {
+                    bsCollapse.hide();
+                } else {
+                    navbarCollapse.classList.remove('show');
+                }
             }
+
+            openModal(e);
         });
-    })();
+    }
+
+    // 3. Close modal on button / backdrop click
+    closers.forEach(function (el) {
+        el.addEventListener('click', closeModal);
+    });
+
+    // 4. Close modal on ESC key
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+            closeModal();
+        }
+    });
+});

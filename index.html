@@ -64,73 +64,77 @@
     </nav>
 
     <!-- main nav -->
-    <nav class="navbar navbar-expand-lg bg-white main-nav">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-                <img src="./assets/images/header/UMUNTHU Lead-04.png" alt="Umunthu Lead Logo" class="navbar-logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+<nav class="navbar navbar-expand-lg bg-white main-nav">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+            <img src="./assets/images/header/UMUNTHU Lead-04.png" alt="Umunthu Lead Logo" class="navbar-logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
 
-                    <!-- Home -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
+                <!-- Home -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                </li>
 
-                    <!-- About Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link d-flex align-items-center gap-1" href="#" id="aboutDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <span>About</span>
-                            <i class='bx bx-chevron-down dropdown-icon'></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-                            <li><a class="dropdown-item" href="#who-we-are">Who We Are</a></li>
-                            <li><a class="dropdown-item" href="#our-story">Our Story</a></li>
-                            <li><a class="dropdown-item" href="#core-values">Core Values</a></li>
-                            <li><a class="dropdown-item" href="#our-team">Our Team</a></li>
-                        </ul>
-                    </li>
+                <!-- About Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link d-flex align-items-center gap-1" href="#about" id="aboutDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>About</span>
+                        <i class='bx bx-chevron-down dropdown-icon'></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <li><a class="dropdown-item" href="./pages/who-we-are.html">Who We Are</a></li>
+                        <li><a class="dropdown-item" href="./pages/who-we-are.html#strategic-objectives">Our Strategic objectives</a></li>
+                        <!-- OUR STORY TRIGGER -->
+                        <li><a class="dropdown-item" href="#" id="navOurStoryLink">Watch Our Story</a></li>
+                        <li><a class="dropdown-item" href="./pages/core-values.html">Core Values</a></li>
+                        <li><a class="dropdown-item" href="./pages/team.html">Our Team</a></li>
+                    </ul>
+                </li>
 
-                    <!-- Our Work Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link d-flex align-items-center gap-1" href="#" id="workDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <span>Our Work</span>
-                            <i class='bx bx-chevron-down dropdown-icon'></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="workDropdown">
-                            <li><a class="dropdown-item" href="#focus-areas">Key Focus Areas</a></li>
-                            <li><a class="dropdown-item" href="#projects">Projects</a></li>
-                            <li><a class="dropdown-item" href="#programs">Programs</a></li>
-                            <li><a class="dropdown-item" href="#sdgs">SDGs</a></li>
-                        </ul>
-                    </li>
+                <!-- Our Work Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link d-flex align-items-center gap-1" href="#" id="workDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>Our Work</span>
+                        <i class='bx bx-chevron-down dropdown-icon'></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="workDropdown">
+                        <li><a class="dropdown-item" href="#focus-areas">Key Focus Areas</a></li>
+                        <li><a class="dropdown-item" href="#projects">Projects</a></li>
+                        <li><a class="dropdown-item" href="#programs">Programs</a></li>
+                        <li><a class="dropdown-item" href="#sdgs">SDGs</a></li>
+                    </ul>
+                </li>
 
-                    <!-- News & Events Dropdown -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link d-flex align-items-center gap-1" href="#" id="eventsDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <span>News & Events</span>
-                            <i class='bx bx-chevron-down dropdown-icon'></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
-                            <li><a class="dropdown-item" href="#latest-news">Latest News</a></li>
-                            <li><a class="dropdown-item" href="#upcoming-events">Upcoming Events</a></li>
-                            <li><a class="dropdown-item" href="#stories">Impact Stories</a></li>
-                            <li><a class="dropdown-item" href="#stories">Gallery</a></li>
-                        </ul>
-                    </li>
+                <!-- News & Events Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link d-flex align-items-center gap-1" href="#" id="eventsDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>News & Events</span>
+                        <i class='bx bx-chevron-down dropdown-icon'></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="eventsDropdown">
+                        <li><a class="dropdown-item" href="#latest-news">Latest News</a></li>
+                        <li><a class="dropdown-item" href="#upcoming-events">Upcoming Events</a></li>
+                        <li><a class="dropdown-item" href="#stories">Impact Stories</a></li>
+                        <li><a class="dropdown-item" href="#stories">Gallery</a></li>
+                    </ul>
+                </li>
 
-                </ul>
-                <a href="#contact" class="btn btn-brand ms-lg-3">Contact</a>
-            </div>
+            </ul>
+            <a href="#contact" class="btn btn-brand ms-lg-3">Contact</a>
         </div>
-    </nav>
+    </div>
+</nav>
+
+
 </header>
     <!-- hero section -->
     <!-- <section class="hero-section">
@@ -220,7 +224,7 @@
                 
                 <!-- Inlined Read More link right at the end of the second paragraph -->
                 <p>Inspired by the African philosophy of <span class="text-italic fw-bold color-2">“Umunthu” — the belief that “I am because we are”,</span> the organization recognizes that sustainable progress is achieved through collective responsibility, compassion, dignity, and solidarity among people. <br> 
-                    <a href="#who-we-are" class="about-read-more-inline">
+                    <a href="./pages/who-we-are.html" class="about-read-more-inline">
                         <span>Read Full Story</span>
                         <i class='bx bx-right-arrow-alt'></i>
                     </a>
@@ -260,43 +264,68 @@
     </div>
 </section>
 
-<!-- PARTNERSHIPS SECTION -->
-<section class="about bg-white" id="partnerships">
-    <div class="container">
-        <!-- Centered Header -->
-        <div class="row about-row justify-content-center text-center">
-            <div class="col-12 col-lg-10 about-content">
-                <h2 class="about-title-dark">Our Partnerships </h2>
-                <div class="about-divider mx-auto"></div>
-            </div>
-        </div>
+<!-- OUR STORY SECTION -->
+<section class="our-story bg-2" id="our-story">
+    <div class="story-main-box bg-1">
+        <div class="row align-items-stretch g-0 mx-0">
 
-        <!-- 2 Partners Row -->
-        <div class="row g-4 justify-content-center align-items-center text-center">
-
-            <!-- Partner 1 -->
-            <div class="col-12 col-md-auto">
-                <div class="partner-item">
-                    <div class="partner-logo-box mb-3">
-                        <img src="./assets/images/logos/ubumbano.png" alt="ACT Ubumbano logo" class="partner-logo">
-                    </div>
-                    <h4 class="partner-name">ACT Ubumbano</h4>
+            <div class="col-12 col-lg-6 d-flex align-items-center">
+                <div class="story-content">
+                    <h2 class="about-title text-start">Our <span class="color-2">Story</span></h2>
+                    <div class="about-divider mb-4"></div>
+                    <p class="story-text">
+                        Watch our background
+                    </p>
                 </div>
             </div>
 
-            <!-- Partner 2 -->
-            <div class="col-12 col-md-auto">
-                <div class="partner-item">
-                    <div class="partner-logo-box mb-3">
-                        <img src="./assets/images/logos/Malawi Govenment.png" alt="Department of Climate Change logo" class="partner-logo">
+            <div class="col-12 col-lg-6">
+                <div class="story-video-wrapper">
+                    <div class="story-video-cover"
+                         id="storyVideoTrigger"
+                         style="background-image: url('./assets/video/DSC08965.jpg');"
+                         role="button"
+                         tabindex="0"
+                         aria-haspopup="dialog"
+                         aria-controls="storyVideoModal"
+                         aria-label="Play our story video">
+                        <span class="story-play-btn">
+                            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true">
+                                <path d="M8 5v14l11-7z"/>
+                            </svg>
+                        </span>
                     </div>
-                    <h4 class="partner-name">Department of Peace and Unity</h4>
                 </div>
             </div>
 
         </div>
     </div>
 </section>
+
+<!-- VIDEO MODAL -->
+<div class="story-modal" id="storyVideoModal" role="dialog" aria-modal="true" aria-label="Our Story Video" aria-hidden="true">
+    <div class="story-modal-backdrop" data-close-modal></div>
+
+    <div class="story-modal-dialog">
+        <button type="button" class="story-modal-close" aria-label="Close video" data-close-modal>
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+                <path d="M6 6l12 12M18 6L6 18"/>
+            </svg>
+        </button>
+
+        <div class="story-modal-video-box">
+            <video id="storyModalVideo"
+                   controls
+                   playsinline
+                   preload="none"
+                   poster="./assets/video/DSC08965.jpg"
+                   controlslist="nodownload">
+                <source src="./assets/video/VOICES THAT MATTER   COMMUNITY JUSTICE VOICE.mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</div>
 
 <!-- NEWS & EVENTS SECTION -->
 <section class="news" id="latest-news">
@@ -376,41 +405,37 @@
     </div>
 </section>
 
+<!-- PARTNERSHIPS SECTION -->
+<section class="about bg-white" id="partnerships">
+    <div class="container">
+        <!-- Centered Header -->
+        <div class="row about-row justify-content-center text-center">
+            <div class="col-12 col-lg-10 about-content">
+                <h2 class="about-title-dark">Our Partnerships </h2>
+                <div class="about-divider mx-auto"></div>
+            </div>
+        </div>
 
-<!-- OUR STORY SECTION -->
-<section class="our-story bg-1" id="our-story">
-    <!-- Full-width box (no container wrapping it) -->
-    <div class="story-main-box bg-2">
-        <div class="row align-items-stretch g-0 mx-0">
+        <!-- 2 Partners Row -->
+        <div class="row g-4 justify-content-center align-items-center text-center">
 
-            <!-- Left Column: content aligned to container edge -->
-            <div class="col-12 col-lg-6 d-flex align-items-center">
-                <div class="story-content">
-                    <h2 class="about-title text-start">Our <span class="color-2">Story</span></h2>
-                    <div class="about-divider mb-4"></div>
-                    <p class="story-text">
-                        Watch our background
-                    </p>
+            <!-- Partner 1 -->
+            <div class="col-12 col-md-auto">
+                <div class="partner-item">
+                    <div class="partner-logo-box mb-3">
+                        <img src="./assets/images/logos/ubumbano.png" alt="ACT Ubumbano logo" class="partner-logo">
+                    </div>
+                    <h4 class="partner-name">ACT Ubumbano</h4>
                 </div>
             </div>
 
-            <!-- Right Column: cover image that opens the video modal -->
-            <div class="col-12 col-lg-6">
-                <div class="story-video-wrapper">
-                    <div class="story-video-cover"
-                         id="storyVideoTrigger"
-                         style="background-image: url('./assets/video/DSC08965.jpg');"
-                         role="button"
-                         tabindex="0"
-                         aria-haspopup="dialog"
-                         aria-controls="storyVideoModal"
-                         aria-label="Play our story video">
-                        <span class="story-play-btn">
-                            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
-                        </span>
+            <!-- Partner 2 -->
+            <div class="col-12 col-md-auto">
+                <div class="partner-item">
+                    <div class="partner-logo-box mb-3">
+                        <img src="./assets/images/logos/Malawi Govenment.png" alt="Department of Climate Change logo" class="partner-logo">
                     </div>
+                    <h4 class="partner-name">Department of Peace and Unity</h4>
                 </div>
             </div>
 
@@ -418,30 +443,6 @@
     </div>
 </section>
 
-<!-- VIDEO MODAL (keep outside the section) -->
-<div class="story-modal" id="storyVideoModal" role="dialog" aria-modal="true" aria-label="Our Story Video" aria-hidden="true">
-    <div class="story-modal-backdrop" data-close-modal></div>
-
-    <div class="story-modal-dialog">
-        <button type="button" class="story-modal-close" aria-label="Close video" data-close-modal>
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
-                <path d="M6 6l12 12M18 6L6 18"/>
-            </svg>
-        </button>
-
-        <div class="story-modal-video-box">
-            <video id="storyModalVideo"
-                   controls
-                   playsinline
-                   preload="none"
-                   poster="./assets/video/DSC08965.jpg"
-                   controlslist="nodownload">
-                <source src="./assets/video/VOICES THAT MATTER   COMMUNITY JUSTICE VOICE.mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-</div>
 
 
 <!-- FOOTER SECTION -->
