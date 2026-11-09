@@ -1,0 +1,101 @@
+/* ==========================================================================
+   KEY FOCUS AREAS PAGE STYLES
+   (hero + breadcrumb styles are shared from who-we-are.css)
+   ========================================================================== */
+
+.focus-card {
+    height: 100%;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 36px 36px 36px 32px;
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.focus-card:hover {
+    border-color: var(--color-hover);
+    box-shadow: 0 8px 20px rgba(1, 33, 69, 0.08);
+    transform: translateY(-2px);
+}
+
+.focus-num {
+    flex: 0 0 56px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--color-hover);
+    color: var(--color-white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.focus-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-primary);
+    margin-bottom: 14px;
+}
+
+.focus-body p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--color-text-dark);
+    margin-bottom: 0;
+}
+
+/* Alternate dark card for visual rhythm */
+.focus-grid > div:nth-child(even) .focus-card {
+    background: var(--color-primary-2);
+    border-color: var(--color-primary-2);
+}
+
+.focus-grid > div:nth-child(even) .focus-card:hover {
+    border-color: var(--color-hover);
+}
+
+.focus-grid > div:nth-child(even) .focus-num {
+    background: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.focus-grid > div:nth-child(even) .focus-title {
+    color: var(--color-white);
+}
+
+.focus-grid > div:nth-child(even) .focus-body p {
+    color: var(--color-white);
+    font-weight: 300;
+}
+
+@media (max-width: 767.98px) {
+    .focus-card {
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px 20px;
+    }
+
+    .focus-num {
+        flex-basis: 44px;
+        width: 44px;
+        height: 44px;
+        font-size: 18px;
+    }
+
+    .focus-title {
+        font-size: 20px;
+    }
+
+    .focus-body p {
+        font-size: 16px;
+    }
+}

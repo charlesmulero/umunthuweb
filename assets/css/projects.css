@@ -1,0 +1,51 @@
+/* PROJECTS LIST + PROJECT DETAILS (uses variables from app.css; hero/breadcrumb from who-we-are.css) */
+
+.projects-intro { max-width: 760px; margin-bottom: 48px; }
+.projects-intro p { font-family: 'Inter', sans-serif; font-size: 20px; line-height: 1.7; color: var(--color-text-dark); margin: 0; }
+
+.project-card {
+    display: flex; flex-direction: column; height: 100%;
+    background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px;
+    overflow: hidden; text-decoration: none; color: inherit;
+    transition: border-color .3s ease, box-shadow .3s ease;
+}
+.project-card:hover, .project-card:focus-visible { border-color: var(--color-hover); box-shadow: 0 8px 20px rgba(1, 33, 69, .08); }
+.project-card:focus-visible { outline: 3px solid var(--color-secondary); outline-offset: 2px; }
+
+.project-card-img { aspect-ratio: 4 / 3; overflow: hidden; background: var(--color-primary-2); }
+.project-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+.project-card:hover .project-card-img img { transform: scale(1.05); }
+
+.project-card-body { display: flex; flex-direction: column; flex: 1; padding: 22px 22px 24px; }
+.project-card-body h3 { font-family: 'Montserrat', sans-serif; font-size: 20px; font-weight: 700; line-height: 1.3; color: var(--color-primary); margin-bottom: 10px; }
+.project-card-body p { font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.65; color: var(--color-text-dark); margin-bottom: 18px; }
+.project-card-link { margin-top: auto; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 600; color: var(--color-hover); display: inline-flex; align-items: center; gap: 4px; }
+.project-card:hover .project-card-link i { transform: translateX(4px); }
+.project-card-link i { transition: transform .3s ease; font-size: 20px; }
+
+/* Detail page */
+.pd-tagline { font-family: 'Inter', sans-serif; font-size: 20px; color: var(--color-white); max-width: 720px; margin-bottom: 20px; }
+
+.pd-row { display: flex; flex-wrap: wrap; align-items: center; gap: 48px; }
+.pd-row + .pd-row { margin-top: 72px; }
+.pd-text, .pd-media { flex: 1 1 380px; min-width: 0; }
+.pd-media { border-radius: 8px; overflow: hidden; background: var(--color-primary-2); aspect-ratio: 4 / 3; }
+.pd-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pd-row.is-reversed { flex-direction: row-reverse; }
+
+.pd-text h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(24px, 3vw, 32px); font-weight: 700; line-height: 1.25; color: var(--color-primary); margin-bottom: 20px; }
+.pd-text p { font-family: 'Inter', sans-serif; font-size: 18px; line-height: 1.75; color: var(--color-text-dark); margin-bottom: 18px; max-width: 62ch; }
+.pd-text p:last-child { margin-bottom: 0; }
+
+.pd-closing { max-width: 860px; margin: 0 auto; text-align: center; }
+.pd-closing p { font-family: 'Montserrat', sans-serif; font-size: clamp(20px, 2.6vw, 28px); font-weight: 600; line-height: 1.5; color: var(--color-white); margin: 0; }
+
+.pd-more-title { font-family: 'Montserrat', sans-serif; font-size: clamp(24px, 3vw, 32px); font-weight: 700; color: var(--color-primary); margin-bottom: 32px; }
+
+@media (max-width: 767.98px) {
+    .projects-intro p, .pd-tagline { font-size: 16px; }
+    .pd-text p { font-size: 16px; }
+    .pd-row { gap: 24px; }
+    .pd-row + .pd-row { margin-top: 48px; }
+    .pd-row.is-reversed { flex-direction: row; }
+}
