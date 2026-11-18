@@ -1,0 +1,61 @@
+/* ==========================================================================
+   SDGs PAGE STYLES  (assets/css/sdgs.css)
+   (hero + breadcrumb styles are shared from who-we-are.css)
+   ========================================================================== */
+
+.sdg-intro { padding-bottom: 56px; }
+.sdg-intro .wwa-objectives-intro { margin-bottom: 0; }
+
+/* Full-width colour bands, flush against each other */
+.sdg-band {
+    background: var(--sdg);
+    color: var(--sdg-ink, #FFFFFF);
+}
+
+.sdg-inner {
+    display: grid;
+    grid-template-columns: clamp(96px, 14vw, 230px) 1fr;
+    align-items: center;
+    gap: 24px;
+    padding: 44px clamp(24px, 6vw, 96px);
+}
+
+.sdg-num {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: clamp(60px, 8vw, 112px);
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.sdg-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: clamp(22px, 2.8vw, 38px);
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: inherit;
+    margin: 0 0 12px;
+}
+
+.sdg-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.65;
+    color: inherit;
+    max-width: 900px;
+    margin: 0;
+}
+
+@media (max-width: 767.98px) {
+    .sdg-intro { padding-bottom: 40px; }
+    .sdg-inner {
+        grid-template-columns: 72px 1fr;
+        gap: 16px;
+        padding: 28px 20px;
+    }
+    .sdg-num { font-size: 52px; letter-spacing: -1px; }
+    .sdg-title { font-size: 19px; margin-bottom: 8px; }
+    .sdg-text p { font-size: 15px; }
+}
