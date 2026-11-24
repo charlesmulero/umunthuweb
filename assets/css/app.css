@@ -550,27 +550,27 @@ a {
 }
 
 /* ==========================================================================
-   5. VISION & MISSION
+   5. VISION & MISSION (single section)
    ========================================================================== */
-#vision,
-#mission {
+#vision-mission {
     min-height: 281px;
     height: auto;
     display: flex;
     align-items: center;
     padding-top: 48px;
     padding-bottom: 48px;
-    
 }
 
-#vision .container,
-#mission .container {
+#vision-mission .container {
     width: 100%;
 }
 
-#vision .about-title,
-#mission .about-title {
+#vision-mission .about-title {
     font-size: 32px;
+}
+
+#vision-mission .vm-block + .vm-block {
+    margin-top: 64px;
 }
 
 #vision p.vision,
@@ -579,11 +579,13 @@ a {
 }
 
 @media (max-width: 767.98px) {
-    #vision,
-    #mission {
-        min-height: 281px;
+    #vision-mission {
         padding-top: 48px;
         padding-bottom: 48px;
+    }
+
+    #vision-mission .vm-block + .vm-block {
+        margin-top: 44px;
     }
 
     #vision p.vision,
@@ -591,6 +593,7 @@ a {
         font-size: 17px !important;
     }
 }
+
 
 /* ==========================================================================
    6. PARTNERSHIPS SECTION
