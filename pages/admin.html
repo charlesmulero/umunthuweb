@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Umunthu Lead admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#012145;--navy2:#0B2F5E;--sun:#FFC72C;--blue:#336699;--bg:#F4F6FA;--line:#E2E8F0;--ink:#1A1A1A;--mute:#5b6778;--red:#c0392b}
+*{box-sizing:border-box;margin:0}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.5}
+h1,h2,h3,.brand{font-family:Montserrat,sans-serif}
+button,input,textarea,select{font:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.hidden{display:none!important}
+
+/* login */
+#login{min-height:100vh;display:grid;place-items:center;background:var(--navy);padding:20px}
+.login-box{background:#fff;border-radius:10px;padding:36px;width:100%;max-width:400px;border-top:5px solid var(--sun)}
+.login-box h1{font-size:24px;color:var(--navy);margin-bottom:4px}
+.login-box p{color:var(--mute);margin-bottom:22px}
+
+/* shell */
+#app{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
+aside{background:var(--navy);color:#fff;padding:22px 14px;position:sticky;top:0;height:100vh;display:flex;flex-direction:column}
+.brand{font-weight:800;font-size:18px;padding:0 10px 22px;border-bottom:1px solid rgba(255,255,255,.12);margin-bottom:14px}
+.brand small{display:block;font-family:Inter;font-weight:400;font-size:12px;color:var(--sun);margin-top:2px}
+nav button{display:flex;gap:12px;align-items:center;width:100%;background:none;border:0;color:rgba(255,255,255,.78);padding:11px 12px;border-radius:6px;cursor:pointer;text-align:left;font-weight:500;border-left:3px solid transparent}
+nav button:hover{background:rgba(255,255,255,.07);color:#fff}
+nav button.on{background:var(--navy2);color:#fff;border-left-color:var(--sun)}
+nav svg{width:18px;height:18px;flex:none}
+.side-foot{margin-top:auto;padding:12px 10px 0;border-top:1px solid rgba(255,255,255,.12);font-size:13px;color:rgba(255,255,255,.7)}
+.side-foot a,.side-foot button{color:var(--sun);background:none;border:0;cursor:pointer;padding:0;text-decoration:none;display:block;margin-top:6px;font-size:13px}
+main{padding:34px 40px 60px;max-width:1100px;width:100%}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:26px;flex-wrap:wrap}
+.top h1{font-size:26px;color:var(--navy)}
+.top p{color:var(--mute)}
+.menu-btn{display:none}
+
+/* ui bits */
+.btn{background:var(--navy);color:#fff;border:2px solid var(--navy);padding:9px 20px;border-radius:6px;font-weight:600;cursor:pointer}
+.btn:hover{background:var(--blue);border-color:var(--blue)}
+.btn.ghost{background:#fff;color:var(--navy)}
+.btn.ghost:hover{background:var(--bg);color:var(--navy);border-color:var(--navy)}
+.btn.sm{padding:5px 12px;font-size:13px}
+.btn.del{background:#fff;color:var(--red);border-color:#e7c4bf}
+.btn.del:hover{background:var(--red);color:#fff;border-color:var(--red)}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:22px}
+.card+.card{margin-top:18px}
+label{display:block;font-weight:600;font-size:14px;margin:0 0 5px;color:var(--navy)}
+input[type=text],textarea,select{width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;color:var(--ink)}
+textarea{resize:vertical;min-height:110px}
+.field{margin-bottom:16px}
+.hint{font-size:13px;color:var(--mute);margin-top:4px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.actions{display:flex;gap:10px;justify-content:flex-end;margin-top:6px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:22px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px 20px;border-left:5px solid var(--sun)}
+.stat b{font-family:Montserrat;font-size:32px;color:var(--navy);display:block;line-height:1.1}
+.stat span{color:var(--mute);font-size:14px}
+.list-item{display:flex;gap:16px;align-items:center;padding:14px 0;border-top:1px solid var(--line)}
+.list-item:first-child{border-top:0}
+.thumb{width:84px;height:60px;border-radius:5px;object-fit:cover;background:var(--navy2);flex:none}
+.grow{flex:1;min-width:0}
+.grow b{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.grow span{color:var(--mute);font-size:13px}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:2px 10px;border-radius:99px;margin-right:6px}
+.tag.News{background:#e3edf8;color:var(--navy2)}.tag.Event{background:#fff2c9;color:#7a5a00}
+.hero-card{display:grid;grid-template-columns:230px 1fr;gap:20px}
+.hero-card .pic{height:150px;border-radius:6px;background:var(--navy2) center/cover;display:grid;place-items:end start;padding:10px}
+.hero-card .pic span{background:rgba(1,33,69,.8);color:#fff;font-size:12px;padding:2px 9px;border-radius:4px}
+.preview{background:var(--navy2);color:#fff;border-radius:8px;padding:26px;text-align:center}
+.preview h3{color:var(--sun);font-size:22px;margin-bottom:6px}
+.preview p{font-weight:300;font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px}
+.tile{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.tile .im{height:120px;background:#eef2f7 center/contain no-repeat;margin:10px}
+.tile.photo .im{margin:0;background-size:cover}
+.tile .meta{padding:10px 12px 12px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.tile .meta b{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.empty{text-align:center;color:var(--mute);padding:34px 10px}
+.drop{border:2px dashed #b9c6d8;border-radius:8px;padding:16px;text-align:center;color:var(--mute);cursor:pointer;display:block;font-weight:400}
+.drop:hover{border-color:var(--blue);background:#f7faff}
+.drop img{max-height:110px;border-radius:5px;display:block;margin:0 auto 8px}
+.drop input{display:none}
+
+/* modal + toast */
+.modal{position:fixed;inset:0;background:rgba(1,33,69,.65);display:grid;place-items:center;padding:18px;z-index:50}
+.modal .card{width:100%;max-width:560px;max-height:92vh;overflow:auto}
+.modal h2{color:var(--navy);margin-bottom:16px;font-size:20px}
+#toast{position:fixed;bottom:26px;left:50%;transform:translate(-50%,20px);background:var(--navy);color:#fff;padding:11px 22px;border-radius:6px;border-left:5px solid var(--sun);opacity:0;pointer-events:none;transition:.25s;z-index:99}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media(max-width:860px){
+ #app{grid-template-columns:1fr}
+ aside{position:fixed;left:0;top:0;width:250px;z-index:40;transform:translateX(-100%);transition:transform .25s}
+ aside.open{transform:none}
+ main{padding:20px 18px 60px}
+ .menu-btn{display:inline-block;margin-bottom:14px}
+ .row,.hero-card{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- LOGIN (UI only: replace with supabase.auth.signInWithPassword) -->
+<section id="login">
+  <form class="login-box" id="loginForm">
+    <h1>Umunthu Lead admin</h1>
+    <p>Sign in to update the website.</p>
+    <div class="field"><label for="em">Email</label><input type="text" id="em" value="admin@umunthulead.org" autocomplete="username"></div>
+    <div class="field"><label for="pw">Password</label><input type="text" id="pw" value="password" autocomplete="current-password" onfocus="this.type='password'"></div>
+    <button class="btn" style="width:100%">Sign in</button>
+  </form>
+</section>
+
+<div id="app" class="hidden">
+  <aside id="side">
+    <div class="brand">Umunthu Lead<small>Website admin</small></div>
+    <nav id="nav"></nav>
+    <div class="side-foot">Signed in as admin<a href="./index.html" target="_blank">View website</a><button id="logout">Sign out</button></div>
+  </aside>
+  <main>
+    <button class="btn ghost sm menu-btn" id="menu">Menu</button>
+    <div id="view"></div>
+  </main>
+</div>
+
+<div id="toast" role="status"></div>
+
+<script>
+/* ---------- Data layer: swap these bodies for Supabase calls later ---------- */
+let db = {
+  hero:[
+    {img:'./assets/images/hero/1.jpg',sub:'Welcome to Umunthu Lead',title:'Inspiring Community Building'},
+    {img:'./assets/images/hero/2.jpg',sub:'Welcome to Umunthu Lead',title:'Strengthening Social Cohesion'},
+    {img:'./assets/images/hero/3.jpg',sub:'Welcome to Umunthu Lead',title:'Advancing Community Development'}],
+  about:[
+    'Umunthu Lead is a youth-led non-governmental organization founded in 2023 in Malawi, committed to building a peaceful, inclusive, and thriving society where communities are empowered to actively participate in their own development.',
+    'Inspired by the African philosophy of “Umunthu” — the belief that “I am because we are”, the organization recognizes that sustainable progress is achieved through collective responsibility, compassion, dignity, and solidarity among people.'],
+  vision:'A peaceful, inclusive, and thriving society.',
+  mission:'Uniting communities for peace, cohesion, and development.',
+  news:[
+    {id:1,type:'News',title:'Youth leaders convene for a community peace dialogue',text:'Young people and local leaders came together to discuss peace and cooperation in their communities.',loc:'',img:'./assets/images/NewsandEvents/DSC07074.jpg'},
+    {id:2,type:'News',title:'Tree planting drive supports local climate action',text:'Volunteers planted trees together with the Department of Climate Change to restore local land.',loc:'',img:'./assets/images/NewsandEvents/DSC07107.jpg'},
+    {id:3,type:'Event',title:'Youth leadership workshop',text:'A hands-on training on leadership, civic participation and community projects.',loc:'Lilongwe, Malawi',img:'./assets/images/NewsandEvents/DSC07167.jpg'}],
+  partners:[
+    {id:1,name:'ACT Ubumbano',logo:'./assets/images/logos/ubumbano.png',showName:false},
+    {id:2,name:'Department of Peace and Unity',logo:'./assets/images/logos/Malawi Govenment.png',showName:true}],
+  gallery:[]
+};
+const api = {
+  async save(section){ /* TODO: await supabase.from('site_content').upsert({key:section,value:db[section]}) */ return true; },
+  async upload(file){ /* TODO: supabase.storage.from('media').upload(...) then return public URL */ return new Promise(r=>{const f=new FileReader();f.onload=()=>r(f.result);f.readAsDataURL(file)}); }
+};
+
+/* ---------- Helpers ---------- */
+const $=s=>document.querySelector(s), esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('show'),2200)};
+const ic=p=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+const pages=[
+ ['overview','Overview',ic('<rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/>')],
+ ['hero','Hero slides',ic('<rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8"/>')],
+ ['about','About us',ic('<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>')],
+ ['vm','Vision & mission',ic('<circle cx="12" cy="12" r="3"/><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/>')],
+ ['news','News & events',ic('<path d="M4 5h13v14H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v8a2 2 0 0 1-2 2"/><path d="M8 9h5M8 13h5"/>')],
+ ['partners','Partners',ic('<path d="M12 21s-8-5-8-11a5 5 0 0 1 8-4 5 5 0 0 1 8 4c0 6-8 11-8 11z"/>')],
+ ['gallery','Gallery',ic('<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/>')]
+];
+let cur='overview';
+const head=(t,p,extra='')=>`<div class="top"><div><h1>${t}</h1><p>${p}</p></div>${extra}</div>`;
+const imgField=(id,src,label)=>`<label class="drop" for="${id}">${src?`<img src="${esc(src)}" alt="" onerror="this.remove()">`:''}<span>${label}</span><input type="file" id="${id}" accept="image/*"></label>`;
+
+/* ---------- Views ---------- */
+const views={
+overview:()=>head('Overview','What is on the website right now.',`<a class="btn ghost" href="./index.html" target="_blank" style="text-decoration:none">View website</a>`)+`
+ <div class="stats">
+  <div class="stat"><b>${db.hero.length}</b><span>Hero slides</span></div>
+  <div class="stat"><b>${db.news.length}</b><span>News and events</span></div>
+  <div class="stat"><b>${db.partners.length}</b><span>Partners</span></div>
+  <div class="stat"><b>${db.gallery.length}</b><span>Gallery photos</span></div>
+ </div>
+ <div class="card"><h3 style="color:var(--navy);margin-bottom:12px">Quick actions</h3>
+  <div style="display:flex;gap:10px;flex-wrap:wrap">
+   <button class="btn" data-go="news" data-new="1">Add news or event</button>
+   <button class="btn ghost" data-go="hero">Edit hero slides</button>
+   <button class="btn ghost" data-go="vm">Edit vision and mission</button>
+   <button class="btn ghost" data-go="gallery">Upload photos</button></div></div>`,
+
+hero:()=>head('Hero slides','The three rotating banners at the top of the home page.')+db.hero.map((h,i)=>`
+ <div class="card hero-card">
+  <div><div class="pic" style="background-image:url('${esc(h.img)}')"><span>Slide ${i+1}</span></div>
+   <label class="drop" style="margin-top:10px;padding:8px" for="hf${i}"><span>Change image</span><input type="file" id="hf${i}" data-hero-img="${i}" accept="image/*"></label></div>
+  <div><div class="field"><label>Small heading</label><input type="text" data-hero="${i}" data-f="sub" value="${esc(h.sub)}"></div>
+   <div class="field"><label>Main title</label><input type="text" data-hero="${i}" data-f="title" value="${esc(h.title)}"></div></div>
+ </div>`).join('')+`<div class="actions" style="margin-top:18px"><button class="btn" data-save="hero">Save changes</button></div>`,
+
+about:()=>head('About us','The text in the About section.')+`
+ <div class="card"><div class="field"><label>First paragraph</label><textarea data-about="0">${esc(db.about[0])}</textarea></div>
+ <div class="field"><label>Second paragraph</label><textarea data-about="1">${esc(db.about[1])}</textarea>
+ <p class="hint">The “Read Full Story” link is added automatically.</p></div>
+ <div class="actions"><button class="btn" data-save="about">Save changes</button></div></div>`,
+
+vm:()=>head('Vision & mission','Both appear together in one section on the home page.')+`
+ <div class="card"><div class="field"><label>Our vision</label><input type="text" id="vis" value="${esc(db.vision)}"></div>
+ <div class="field"><label>Our mission</label><input type="text" id="mis" value="${esc(db.mission)}"></div>
+ <div class="actions"><button class="btn" data-save="vm">Save changes</button></div></div>
+ <div class="card" style="padding:0;border:0"><div class="preview"><h3>Our Vision</h3><p id="pv">${esc(db.vision)}</p><h3 style="margin-top:22px">Our Mission</h3><p id="pm">${esc(db.mission)}</p></div></div>`,
+
+news:()=>head('News & events','Cards shown in the News & Events section.',`<button class="btn" data-add="news">Add post</button>`)+`
+ <div class="card">${db.news.length?db.news.map(n=>`
+  <div class="list-item"><img class="thumb" src="${esc(n.img)}" alt="" onerror="this.style.visibility='hidden'">
+   <div class="grow"><b>${esc(n.title)}</b><span><span class="tag ${n.type}">${n.type}</span>${esc(n.type==='Event'&&n.loc?n.loc:n.text)}</span></div>
+   <button class="btn ghost sm" data-edit="news" data-id="${n.id}">Edit</button>
+   <button class="btn del sm" data-del="news" data-id="${n.id}">Delete</button></div>`).join(''):`<div class="empty">No posts yet. Add your first news item or event.</div>`}</div>`,
+
+partners:()=>head('Partners','Logos shown in Our Partnerships.',`<button class="btn" data-add="partners">Add partner</button>`)+(db.partners.length?`<div class="grid">${db.partners.map(p=>`
+ <div class="tile"><div class="im" style="background-image:url('${esc(p.logo)}')"></div>
+  <div class="meta"><b>${esc(p.name)}</b><span><button class="btn ghost sm" data-edit="partners" data-id="${p.id}">Edit</button> <button class="btn del sm" data-del="partners" data-id="${p.id}">Delete</button></span></div></div>`).join('')}</div>`:`<div class="card empty">No partners yet. Add a logo to get started.</div>`),
+
+gallery:()=>head('Gallery','Photos for the gallery page.',`<label class="btn" style="cursor:pointer">Upload photos<input type="file" id="gUp" accept="image/*" multiple hidden></label>`)+(db.gallery.length?`<div class="grid">${db.gallery.map(g=>`
+ <div class="tile photo"><div class="im" style="background-image:url('${g.src}')"></div><div class="meta"><b>Photo</b><button class="btn del sm" data-del="gallery" data-id="${g.id}">Delete</button></div></div>`).join('')}</div>`:`<div class="card empty">No photos yet. Upload photos to build the gallery.</div>`)
+};
+
+function render(){
+  $('#nav').innerHTML=pages.map(p=>`<button data-page="${p[0]}" class="${p[0]===cur?'on':''}">${p[2]}${p[1]}</button>`).join('');
+  $('#view').innerHTML=views[cur]();
+  $('#side').classList.remove('open'); window.scrollTo(0,0);
+}
+const go=p=>{cur=p;render()};
+
+/* ---------- Modal for news + partners ---------- */
+let pendingImg=null;
+function openForm(kind,id){
+  const isN=kind==='news', item=id?db[kind].find(x=>x.id==id):{};
+  pendingImg=null;
+  const m=document.createElement('div');m.className='modal';m.id='modal';
+  m.innerHTML=`<div class="card"><h2>${id?'Edit':'Add'} ${isN?'post':'partner'}</h2>`+(isN?`
+   <div class="row"><div class="field"><label>Type</label><select id="f-type"><option ${item.type==='News'?'selected':''}>News</option><option ${item.type==='Event'?'selected':''}>Event</option></select></div>
+   <div class="field" id="locBox"><label>Location (events)</label><input type="text" id="f-loc" value="${esc(item.loc)}" placeholder="Lilongwe, Malawi"></div></div>
+   <div class="field"><label>Title</label><input type="text" id="f-title" value="${esc(item.title)}"></div>
+   <div class="field"><label>Short summary</label><textarea id="f-text" style="min-height:80px">${esc(item.text)}</textarea></div>
+   <div class="field"><label>Cover image</label>${imgField('f-img',item.img,'Choose image')}</div>`:`
+   <div class="field"><label>Partner name</label><input type="text" id="f-name" value="${esc(item.name)}"></div>
+   <div class="field"><label><input type="checkbox" id="f-show" ${item.showName?'checked':''}> Show the name under the logo</label></div>
+   <div class="field"><label>Logo</label>${imgField('f-img',item.logo,'Choose logo')}</div>`)+`
+   <div class="actions"><button class="btn ghost" data-close>Cancel</button><button class="btn" id="f-save">Save</button></div></div>`;
+  document.body.appendChild(m);
+  const loc=()=>{if(isN)$('#locBox').style.display=$('#f-type').value==='Event'?'':'none'};
+  if(isN){$('#f-type').onchange=loc;loc()}
+  $('#f-img').onchange=async e=>{if(e.target.files[0]){pendingImg=await api.upload(e.target.files[0]);const l=e.target.closest('label');l.querySelector('img')?.remove();l.insertAdjacentHTML('afterbegin',`<img src="${pendingImg}" alt="">`)}};
+  $('#f-save').onclick=async()=>{
+    if(isN){
+      const t=$('#f-title').value.trim(); if(!t)return toast('Add a title first');
+      const o={id:id?+id:Date.now(),type:$('#f-type').value,title:t,text:$('#f-text').value.trim(),loc:$('#f-loc').value.trim(),img:pendingImg||item.img||''};
+      id?db.news[db.news.findIndex(x=>x.id==id)]=o:db.news.unshift(o);
+    }else{
+      const n=$('#f-name').value.trim(); if(!n)return toast('Add the partner name first');
+      const o={id:id?+id:Date.now(),name:n,showName:$('#f-show').checked,logo:pendingImg||item.logo||''};
+      id?db.partners[db.partners.findIndex(x=>x.id==id)]=o:db.partners.push(o);
+    }
+    await api.save(kind); m.remove(); render(); toast('Saved');
+  };
+}
+
+/* ---------- Events ---------- */
+document.addEventListener('click',async e=>{
+  const t=e.target.closest('[data-page],[data-go],[data-add],[data-edit],[data-del],[data-save],[data-close]'); if(!t)return;
+  const d=t.dataset;
+  if(d.page)return go(d.page);
+  if(d.go){go(d.go);if(d.new)openForm('news');return}
+  if(d.add)return openForm(d.add);
+  if(d.edit)return openForm(d.edit,d.id);
+  if(d.close!==undefined)return $('#modal').remove();
+  if(d.del){ if(!confirm('Delete this item? This cannot be undone.'))return;
+    db[d.del]=db[d.del].filter(x=>x.id!=d.id); await api.save(d.del); render(); return toast('Deleted'); }
+  if(d.save){
+    if(d.save==='hero')document.querySelectorAll('[data-hero]').forEach(i=>db.hero[i.dataset.hero][i.dataset.f]=i.value);
+    if(d.save==='about')document.querySelectorAll('[data-about]').forEach(i=>db.about[i.dataset.about]=i.value);
+    if(d.save==='vm'){db.vision=$('#vis').value;db.mission=$('#mis').value}
+    await api.save(d.save); toast('Saved');
+  }
+});
+document.addEventListener('input',e=>{
+  if(e.target.id==='vis')$('#pv').textContent=e.target.value;
+  if(e.target.id==='mis')$('#pm').textContent=e.target.value;
+});
+document.addEventListener('change',async e=>{
+  const t=e.target;
+  if(t.dataset.heroImg!==undefined&&t.files[0]){db.hero[t.dataset.heroImg].img=await api.upload(t.files[0]);
+    const s=[...document.querySelectorAll('[data-hero]')].map(i=>[i.dataset.hero,i.dataset.f,i.value]);render();
+    s.forEach(([i,f,v])=>db.hero[i][f]=v);toast('Image changed. Save to keep it.')}
+  if(t.id==='gUp'){for(const f of t.files)db.gallery.unshift({id:Date.now()+Math.random(),src:await api.upload(f)});
+    await api.save('gallery');render();toast('Uploaded')}
+});
+$('#loginForm').onsubmit=e=>{e.preventDefault();$('#login').classList.add('hidden');$('#app').classList.remove('hidden');render()};
+$('#logout').onclick=()=>{$('#app').classList.add('hidden');$('#login').classList.remove('hidden')};
+$('#menu').onclick=()=>$('#side').classList.toggle('open');
+</script>
+</body>
+</html>
