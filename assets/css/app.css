@@ -630,28 +630,25 @@ a {
 }
 
 .partner-item {
-    width: 280px; /* Standardized width for both cards */
+    width: 280px;
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
 }
 
 .partner-logo-box {
     width: 100%;
-    height: 90px;
-    /* background-color: var(--color-bg-light); */
-    /* border: 1px solid var(--color-border); */
+    height: 110px;              /* same box for every logo, so they align */
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px;
+    padding: 8px;
+    margin-bottom: 16px !important;
     transition: all 0.3s ease;
-    margin-bottom: 16px; /* Controlled spacing between logo box and title */
 }
 
 .partner-logo {
@@ -661,23 +658,15 @@ a {
     transition: all 0.3s ease;
 }
 
-.partner-item:hover .partner-logo-box {
-    /* border-color: var(--color-hover); */
-    /* box-shadow: 0 6px 18px rgba(0, 33, 71, 0.08); */
-}
-
 .partner-name {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 700;
     color: var(--color-primary);
-    margin-bottom: 0;
-    /* Gives enough space for 2 lines uniformly so boxes stay balanced */
-    min-height: 44px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 0;
+    text-align: center;
 }
+
 
 @media (max-width: 767.98px) {
     #partnerships {
