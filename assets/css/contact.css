@@ -1,0 +1,85 @@
+/* ==========================================================================
+   CONTACT PAGE
+   ========================================================================== */
+.ct-hero {
+    position: relative;
+    padding: 110px 0 100px;
+    background: var(--color-primary-2) url('../images/hero/3.jpg') center / cover no-repeat;
+    overflow: hidden;
+}
+.ct-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(1, 33, 69, 0.6) 0%, rgba(1, 33, 69, 0.25) 100%);
+}
+.ct-hero .container { position: relative; z-index: 2; }
+
+.ct-breadcrumb { font-family: 'Montserrat', sans-serif; font-weight: 500; font-size: 18px; display: inline-flex; align-items: center; gap: 8px; }
+.ct-breadcrumb a { color: var(--color-secondary); }
+.ct-breadcrumb a:hover { color: var(--color-white); text-decoration: underline; }
+.ct-breadcrumb .sep { color: rgba(255, 255, 255, 0.4); }
+.ct-breadcrumb .current { color: var(--color-white); }
+
+/* Intro + direct contact cards */
+.ct-direct { background: var(--color-white); padding: 80px 0; }
+.ct-direct .container { max-width: 1000px; }
+.ct-intro { font-family: 'Inter', sans-serif; font-size: 20px; line-height: 1.7; max-width: 720px; margin: 0 auto 48px; text-align: center; }
+
+.ct-card {
+    height: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 36px 32px;
+    text-align: center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+/* .ct-card:hover { border-color: var(--color-hover); box-shadow: 0 10px 24px rgba(1, 33, 69, 0.09); } */
+
+.ct-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--color-hover);
+    border: 1px solid var(--color-hover);
+    font-size: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+.ct-card h3 { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 22px; color: var(--color-primary); margin-bottom: 6px; }
+.ct-card p { font-family: 'Inter', sans-serif; color: #5b6778; margin-bottom: 14px; }
+.ct-link { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 18px; color: var(--color-hover); word-break: break-word; }
+.ct-link:hover { color: var(--color-primary); text-decoration: underline; }
+
+/* Social section */
+.ct-social { padding: 80px 0; }
+.ct-social .container { max-width: 1000px; }
+.ct-social .about-title, .ct-social .about-divider { text-align: center; }
+.ct-social .ct-intro { color: var(--color-white); font-weight: 300; margin-bottom: 40px; }
+
+.ct-tile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 100%;
+    padding: 20px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-white);
+}
+.ct-tile:hover { background: var(--color-secondary); border-color: var(--color-secondary); color: var(--color-primary); transform: translateY(-3px); }
+.ct-tile i { font-size: 38px; flex: none; }
+.ct-tile b { display: block; font-family: 'Montserrat', sans-serif; font-size: 18px; line-height: 1.2; }
+.ct-tile span { font-family: 'Inter', sans-serif; font-size: 14px; opacity: 0.8; }
+.ct-tile:focus-visible, .ct-link:focus-visible { outline: 3px solid var(--color-secondary); outline-offset: 3px; }
+
+@media (max-width: 767.98px) {
+    .ct-hero { padding: 80px 0 70px; }
+    .ct-direct, .ct-social { padding: 56px 0; }
+    .ct-intro { font-size: 17px; }
+    .ct-breadcrumb { font-size: 16px; }
+}
